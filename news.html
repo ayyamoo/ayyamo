@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/jquery.fancybox.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./css/clash-display.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
+    <style>
+
+        /* NEWS HERO */
+        .hero-small{
+    background:
+    linear-gradient(
+    rgba(0,135,81,.85),
+    rgba(0,80,50,.85)),
+    url('image/hero2.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    min-height:60vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+}
+.hero-small h1{
+    font-size:4rem;
+    font-weight:700;
+    text-shadow:0 5px 20px rgba(0,0,0,.4);
+}
+
+.hero-small p{
+    font-size:1.3rem;
+    max-width:700px;
+    margin:auto;
+}
+        /* SECTION TITLE */
+        .section-title h2{
+            color:#198754;
+            font-weight:700;
+            margin-bottom:10px;
+        }
+        
+        .section-title p{
+            color:#666;
+        }
+        
+        /* NEWS CARDS */
+        .news-card{
+            border:none;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1);
+            transition:.4s;
+            height:100%;
+        }
+        
+        .news-card:hover{
+            transform:translateY(-10px);
+        }
+        
+        .news-card img{
+            height:250px;
+            object-fit:cover;
+        }
+        
+        .news-card .card-body{
+            padding:25px;
+        }
+        
+        .news-card h5{
+            color:#198754;
+            font-weight:700;
+            margin-bottom:15px;
+        }
+        
+        .news-card p{
+            color:#666;
+            line-height:1.7;
+        }
+        
+        /* BUTTON */
+        .btn-primary{
+            background:#198754;
+            border:none;
+            border-radius:30px;
+            padding:10px 25px;
+        }
+        
+        .btn-primary:hover{
+            background:#146c43;
+        }
+        
+        /* PRESS RELEASE */
+        .list-group-item{
+            border:none;
+            margin-bottom:15px;
+            border-left:5px solid #198754;
+            border-radius:12px !important;
+            padding:20px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+            transition:.3s;
+        }
+        
+        .list-group-item:hover{
+            transform:translateX(8px);
+        }
+        
+        /* MODAL */
+        .custom-modal{
+            border:none;
+            border-radius:20px;
+        }
+        
+        .custom-modal-header{
+            background:#198754;
+            color:white;
+        }
+        
+        .modal-image{
+            border-radius:15px;
+            height:350px;
+            width:100%;
+            object-fit:cover;
+        }
+        
+        /* FOOTER */
+        footer{
+            background:linear-gradient(135deg,#198754,#0b3d2e);
+            color:white;
+            padding:40px 20px;
+            text-align:center;
+            margin-top:80px;
+        }
+        
+        .footer-social{
+            margin-bottom:20px;
+        }
+        
+        .social-icon{
+            width:50px;
+            height:50px;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            background:rgba(255,255,255,0.15);
+            border-radius:50%;
+            margin:0 8px;
+            color:white;
+            font-size:24px;
+            text-decoration:none;
+            transition:.3s;
+        }
+        
+        .social-icon:hover{
+            background:white;
+            color:#198754;
+            transform:translateY(-5px);
+        }
+
+        .navbar{
+    background:#006b3f !important;
+    box-shadow:0 2px 20px rgba(0,0,0,.1);
+}
+
+.navbar-brand{
+    font-weight:700;
+    font-size:1.4rem;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:10px;
+}
+
+.nav-link:hover,
+.nav-link.active{
+    color:#d4ffe6 !important;
+}
+custom-navbar{
+    background: rgba(25,135,84,0.95);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand{
+    font-size:24px;
+    color:white !important;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:10px;
+    font-weight:500;
+}
+
+.nav-link:hover,
+.nav-link.active{
+    color:#00b96b !important;
+}
+.navbar-brand img{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid white;
+    padding:2px;
+    background:white;
+}
+/* REMOVE ALL LEFT SPACING */
+.navbar,
+.container-fluid,
+.navbar-brand {
+    margin: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* BRAND ALIGNMENT */
+.navbar-brand{
+    display: flex;
+    align-items: center;
+}
+
+/* LOGO STYLE */
+.navbar-brand img{
+    width:65px;
+    height:65px;
+    object-fit: cover;
+    border-radius: 50%;
+}        
+        </style>
+    
+</head>
+<!-- LOADING SCREEN -->
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <div class="container-fluid px-0">
+        <a class="navbar-brand d-flex align-items-center m-0 ps-0" href="index.html">
+
+            <img src="./image/logo.jpg" alt="Ministry Logo" class="me-2">
+            Ministry Of Information.
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+                <li class="nav-item"><a class="nav-link active" href="news.html">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-small text-center text-white">
+    <div class="container">
+        <h1>News & Press Releases</h1>
+        <p>Latest updates from the ministry</p>
+    </div>
+</section>
+
+<section class="container mt-5">
+
+    <div class="section-title">
+        <h2>News & Updates</h2>
+        <p>Latest government announcements and press releases</p>
+    </div>
+
+    <div class="row" id="newsContainer">
+        <!-- NEWS 1 -->
+        <div class="col-md-6 mb-4" data-aos="fade-up">
+         <div class="card news-card">
+
+                <img src="image/100.jpg" class="card-img-top">
+
+                <div class="card-body">
+                    <h5>Governor Muhammad Inuwa Yahaya Dan Majen Gombe</h5>
+
+                    <p>
+                        Muhammad Inuwa Yahaya is the Governor of Gombe State, serving since 2019 and re-elected in 2023. He is focused on improving infrastructure, healthcare, education, and economic development in the state.                    </p>
+
+                    <button class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#newsModal"
+                        onclick="showNews(
+                            'Governor Muhammad Inuwa Yahaya Dan Majen Gombe',
+                            'Muhammad Inuwa Yahaya is the Governor of Gombe State, serving since May 2019 and re-elected in 2023. Born on October 9, 1961, he studied Accounting at Ahmadu Bello University and built a successful career in business before entering politics. He served as Commissioner for Finance and Economic Development from 2003 to 2010. His administration focuses on healthcare, road construction, education, and economic development through projects such as the Kolmani Oil Exploration Project.',
+                            'image/100.jpg'
+                        )">
+                        Read More
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- NEWS 2 -->
+        <div class="col-md-6 mb-4" data-aos="fade-up">
+            <div class="card news-card">
+
+                <img src="image/52.jpg" class="card-img-top">
+
+                <div class="card-body">
+                    <h5>Alhaji Abubakar Shehu Abubakar III  Sarkin Gombe </h5>
+
+                    <p>
+                        Alhaji Abubakar Shehu Abubakar III is the current Emir of Gombe, who ascended the throne in 2014 as the 11th ruler of the Gombe Emirate.
+                    </p>
+
+                    <button class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#newsModal"
+                        onclick="showNews(
+                            'Alhaji Abubakar Shehu Abubakar III  Sarkin Gombe ',
+                            
+                            'Alhaji Abubakar Shehu Abubakar III is the current Emir of Gombe, who ascended the throne in 2014 as the 11th ruler of the Gombe EmirateAlhaji Abubakar Shehu Abubakar III shi ne Sarkin Gombe na yanzu kuma ya hau karagar mulki a ranar 6 ga Yuni, 2014. Shi ne sarki na 11 a jerin sarakunan masarautar Gombe kuma shugaban majalisar san jihadin Shehu Usman Dan Fodio a 1804, inda Modibbo Buba Yero ya kafa ta, sannan dansa Sulaimanu ya zama sarki na farko a tarihi.',
+                            
+                            
+                            'image/52.jpg'
+                        )">
+                        Read More
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- PRESS RELEASE -->
+<section class="container mt-5">
+    <h2 class="text-center mb-4">Official Press Statements</h2>
+
+    <div class="list-group">
+        <div class="list-group-item">
+            Press release on educational awareness program.
+        </div>
+
+        <div class="list-group-item">
+            Official statement on cultural development.
+        </div>
+
+        <div class="list-group-item">
+            Media briefing on government projects.
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <a class="social-icon" href="https://twitter.com/" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a class="social-icon" href="https://twitter.com/" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+       </a>
+        <a class="social-icon" href="https://twitter.com/" target="_blank">
+    
+        <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a class="social-icon" href="https://twitter.com/" target="_blank">
+    
+        <ion-icon name="logo-tiktok"></ion-icon>
+        </a>
+    
+
+    <h5>Ministry of Information, Culture and Ethical Orientation</h5>
+
+    <p>Providing timely information, preserving culture and promoting ethical values.</p>
+
+    <p>&copy; 2026 Gombe State Government. All Rights Reserved.</p>
+</footer>
+<!-- NEWS MODAL -->
+<div class="modal fade" id="newsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content custom-modal">
+
+            <div class="modal-header custom-modal-header">
+                <h4 id="newsTitle"></h4>
+                <button type="button"
+                        class="btn-close custom-close"
+                        data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <img id="newsImage" class="img-fluid mb-3 modal-image">
+
+                <p id="newsContent"></p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    AOS.init({
+        duration:1000,
+        once:true
+    });
+    </script>
+<script>
+    function showNews(title, content, image){
+    
+        document.getElementById("newsTitle").innerText = title;
+        document.getElementById("newsContent").innerText = content;
+        document.getElementById("newsImage").src = image;
+    
+    }
+    window.addEventListener("load", function(){
+        document.getElementById("loader").style.display = "none";
+    });
+    
+    </script>
+    <script>
+       const newsData = [
+    {
+        title: "Governor Inuwa Yahaya Wins National Security Leadership Award",
+        image: "image/1.jpg",
+        short: "Gombe named safest state in Nigeria for 2026...",
+        content: `Governor Muhammadu Inuwa Yahaya was honored with a national award for outstanding leadership in security, while Gombe State was named Nigeria’s Safest State for 2026 at the Annual Security Conference and Awards held in Abuja. The recognition was presented by the People's Security Monitor in acknowledgment of the state's achievements in crime prevention, intelligence gathering, public safety, and maintaining peace and stability.`
+    },
+    {
+        title: "Tinubu Launches ₦1.245 Trillion Gombe–Biu Dual Carriageway Project",
+        image: "image/2.jpg",
+        short: "Major infrastructure boost for North-East region...",
+        content: `President Bola Ahmed Tinubu has flagged off the reconstruction and expansion of the 125km Gombe–Biu road into a modern dual carriageway valued at ₦1.245 trillion. The project aims to improve trade, mobility, security, and regional integration across the North-East.`
+    },
+    {
+        title: "Ministan Ayyuka Dave Umahi Ya Yabi Gwamna Inuwa Yahaya",
+        image: "image/3.jpg",
+        short: "Federal minister praises Gombe development efforts...",
+        content: `Ministan Ayyuka na Tarayya, David Umahi, ya yabawa Gwamna Muhammadu Inuwa Yahaya yayin wata ziyarar aiki da ya kai Gombe, inda ya bayyana gamsuwa da ayyukan ci gaba a jihar.`
+    },
+    {
+        title: "Governor Commended for ACReSAL Climate Resilience Project",
+        image: "image/4.jpg",
+        short: "Climate resilience project benefits over 1.4 million people...",
+        content: `Governor Inuwa Yahaya has been praised for supporting the ACReSAL project in Gombe, especially the Doma Gully Erosion Control intervention which benefits about 1.4 million people across 67 communities.`
+    },
+    {
+        title: "Sarkin Gombe Commends Governor for Transformational Governance",
+        image: "image/5.jpg",
+        short: "Emir praises seven years of leadership achievements...",
+        content: `The Emir of Gombe praised Governor Inuwa Yahaya for transforming key sectors such as education, healthcare, security, infrastructure, and economy over seven years of leadership.`
+    },
+    {
+        title: "Gombe Ranked Nigeria’s Best State in Public Healthcare (2025)",
+        image: "image/6.jpg",
+        short: "State tops national healthcare performance ranking...",
+        content: `Gombe State was ranked the best-performing state in Nigeria for public hospital services in 2025 according to StatiSense, reflecting major improvements in healthcare infrastructure and services.`
+    },
+    {
+        title: "Gombe Trains 173 Pastoralists on Modern Livestock Production",
+        image: "image/7.jpg",
+        short: "Training improves livestock productivity...",
+        content: `Over 170 pastoralists were trained in modern livestock production techniques under the L-PRES initiative to improve meat and milk production in Gombe State.`
+    },
+    {
+        title: "Gombe Establishes Digital Economy Commission (GITDEC)",
+        image: "image/8.jpg",
+        short: "New commission to drive digital transformation...",
+        content: `Governor Inuwa Yahaya signed into law the creation of GITDEC to promote innovation, startups, cybersecurity, and digital skills development in Gombe State.`
+    },
+    {
+        title: "APC Declares Jamilu Gwamna Winner of 2027 Primary",
+        image: "image/9.jpg",
+        short: "APC produces governorship candidate for 2027...",
+        content: `Dr. Jamilu Isiyaku Gwamna won the APC governorship primary election with 247,161 votes, defeating other candidates including Isa Ali Pantami.`
+    },
+    {
+        title: "Delta State Visits Gombe for E-Procurement Study Tour",
+        image: "image/10.jpg",
+        short: "Delta studies Gombe digital procurement system...",
+        content: `Delta State Public Procurement Commission visited Gombe to study its advanced e-procurement system, which is seen as a national model for transparency and accountability.`
+    },
+    {
+        title: "Gombe Ranked Best in Public Healthcare Services Again",
+        image: "image/11.jpg",
+        short: "Reinforced ranking for healthcare excellence...",
+        content: `Gombe State maintained its top ranking in healthcare performance due to reforms in hospitals, primary healthcare upgrades, and improved health insurance coverage.`
+    },
+    {
+        title: "Gombe Works Ministry Leadership Transition",
+        image: "image/12.jpg",
+        short: "Commissioner hands over after tenure...",
+        content: `The Commissioner for Works handed over to the Permanent Secretary following the dissolution of the State Executive Council by Governor Inuwa Yahaya.`
+    },
+    {
+        title: "Gombe Signs Contracts for Security Infrastructure Projects",
+        image: "image/13.jpg",
+        short: "New police station and fire service headquarters approved...",
+        content: `Gombe State signed contracts for a Deputy Governor’s Office, Fire Service Headquarters, and a Divisional Police Station to strengthen security infrastructure.`
+    },
+    {
+        title: "History of the Tangale People of Southern Gombe",
+        image: "image/14.jpg",
+        short: "Overview of Tangale ethnic group and culture...",
+        content: `The Tangale people are a major ethnic group in southern Gombe known for farming, culture, and strong traditions dating back centuries.`
+    },
+    {
+        title: "ACReSAL Hands Over Security Facilities to NSCDC",
+        image: "image/15.jpg",
+        short: "Forest protection strengthened in Kanawa...",
+        content: `The ACReSAL project handed over security facilities including patrol motorcycles and offices to NSCDC to enhance forest protection in Kanawa Forest.`
+    },
+    {
+        title: "Gombe Infrastructure Development Continues Across State",
+        image: "image/16.jpg",
+        short: "Ongoing road and urban development projects...",
+        content: `Gombe State continues major infrastructure development under Governor Inuwa Yahaya, including road networks and urban renewal projects across communities.`
+    },
+    {
+        title: "Government Reaffirms Commitment to Peace and Security",
+        image: "image/17.jpg",
+        short: "State pledges continued development and stability...",
+        content: `Governor Inuwa Yahaya reaffirmed commitment to peace, unity, and development while working closely with traditional institutions and security agencies.`
+    }
+];
+        
+        function loadNews() {
+            const container = document.getElementById("newsContainer");
+        
+            newsData.forEach((news) => {
+                container.innerHTML += `
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="card news-card">
+        
+                        <img src="${news.image}" class="card-img-top">
+        
+                        <div class="card-body">
+                            <h5>${news.title}</h5>
+                            <p>${news.short}</p>
+        
+                            <button class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#newsModal"
+                                onclick="showNews(
+                                    '${news.title}',
+                                    \`${news.content}\`,
+                                    '${news.image}'
+                                )">
+                                Read More
+                            </button>
+                        </div>
+        
+                    </div>
+                </div>`;
+            });
+        }
+        
+        loadNews();
+        </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/all.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/jquery.fancybox.js.js"></script>
+<script src="./js/jquery.fancybox.min.js.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/jquery-3.6.0.min.js">
+
+</script>
+
+</body>
+</html>

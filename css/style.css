@@ -1,0 +1,582 @@
+/* ===== GOOGLE FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --primary:#008751;
+    --primary-dark:#006b3f;
+    --light:#f8fff9;
+    --white:#ffffff;
+    --shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+body{
+    background:#f5f7fa;
+    color:#008751;
+    overflow-x:hidden;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    background:var(--primary) !important;
+    padding:18px 0;
+    box-shadow:0 4px 20px rgba(0,0,0,.15);
+}
+
+.navbar-brand{
+    font-size:26px;
+    font-weight:700;
+    color:white !important;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:20px;
+    font-weight:500;
+    position:relative;
+}
+
+.nav-link::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:white;
+    transition:.3s;
+}
+
+.nav-link:hover::after{
+    width:100%;
+}
+/* ===== HERO SECTION ===== */
+.hero{
+    background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('../images/hero.jpg');
+    background-size:cover;
+    background-position:center;
+    height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:55px;
+    font-weight:700;
+}
+
+.hero p{
+    font-size:20px;
+    margin:20px 0;
+}
+
+.hero .btn{
+    padding:12px 30px;
+    border-radius:30px;
+    font-weight:bold;
+}
+.hero-slider{
+    height:90vh;
+}
+
+.hero-slider img{
+    height:90vh;
+    object-fit:cover;
+    filter:brightness(50%);
+}
+
+.carousel-caption{
+    bottom:25%;
+}
+
+.carousel-caption h1{
+    font-size:60px;
+    font-weight:700;
+}
+
+.carousel-caption p{
+    font-size:22px;
+}
+
+/* SMALL HERO FOR OTHER PAGES */
+.hero-small{
+    background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('../images/banner.jpg');
+    background-size:cover;
+    background-position:center;
+    padding:100px 20px;
+    text-align:center;
+    color:white;
+}
+
+.hero-small h1{
+    font-size:45px;
+    font-weight:700;
+}
+
+/* SECTION TITLE */
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:35px;
+    font-weight:700;
+    color:#0b1f3a;
+}
+
+.section-title p{
+    color:#008751;
+}
+
+/* CARDS */
+.card{
+    border:none;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0px 6px 20px rgba(0,0,0,0.1);
+    transition:0.4s;
+    margin-bottom:25px;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    height:250px;
+    object-fit:cover;
+}
+
+.card-body h5,
+.card-body h4{
+    color:#0b1f3a;
+    font-weight:600;
+}
+
+/* GALLERY */
+.gallery-img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.gallery-img:hover{
+    transform:scale(1.05);
+}
+
+/* ABOUT PAGE LEADERS */
+.leadership-img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #f4b400;
+}
+
+/* BUTTONS */
+.btn-primary{
+    background:#0b1f3a;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#f4b400;
+    color:black;
+}
+
+/* CONTACT FORM */
+form input,
+form textarea{
+    border-radius:10px !important;
+    padding:12px;
+}
+
+form button{
+    border-radius:10px;
+    padding:12px;
+}
+
+/* LIST GROUP */
+.list-group-item{
+    padding:20px;
+    border:none;
+    margin-bottom:10px;
+    border-radius:10px !important;
+    box-shadow:0px 3px 10px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+footer{
+    background:linear-gradient(135deg,#006b3f,#008751);
+    color:white;
+    padding:60px 20px 25px;
+    margin-top:80px;
+    width:100%;
+}
+
+.social-icon{
+    width:50px;
+    height:50px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    background:white;
+    color:#008751;
+    border-radius:50%;
+    margin:0 8px 20px;
+    font-size:24px;
+    transition:.4s;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.social-icon:hover{
+    transform:translateY(-8px);
+    background:#e8f7ef;
+}
+
+footer p{
+    margin-bottom:10px;
+    font-size:15px;
+}
+/* =========================
+   BEAUTIFUL GALLERY MODAL
+========================= */
+
+.custom-modal{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0px 10px 40px rgba(0,0,0,0.25);
+    animation: popupFade 0.4s ease;
+}
+
+/* Header */
+.custom-modal-header{
+    background: linear-gradient(135deg, #0b1f3a, #123b70);
+    color:white;
+    padding:20px;
+    border:none;
+}
+
+.custom-modal-header h4{
+    font-weight:600;
+}
+
+/* Close button */
+.custom-close{
+    background-color:white;
+    border-radius:50%;
+    padding:10px;
+}
+
+/* Image container */
+.modal-image-container{
+    overflow:hidden;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+/* Large image */
+.modal-image{
+    width:100%;
+    max-height:500px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.modal-image:hover{
+    transform:scale(1.03);
+}
+
+/* Description box */
+.modal-description-box{
+    background:#f8f9fa;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.08);
+}
+
+.modal-description-box p{
+    font-size:18px;
+    line-height:1.8;
+    color:#333;
+}
+
+/* Modal fade animation */
+@keyframes popupFade{
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+/* Activity Cards */
+.activity-card{
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+    transition: 0.4s;
+    cursor: pointer;
+
+    height: 100%;              /* Makes all cards equal height */
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-card:hover{
+    transform: translateY(-10px);
+}
+
+/* Image */
+.activity-img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Content */
+.activity-content{
+    padding: 20px;
+    flex-grow: 1;              /* Makes content area stretch equally */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Title */
+.activity-content h5{
+    color: #0b1f3a;
+    font-weight: 600;
+    min-height: 50px;          /* Keeps titles aligned */
+}
+
+/* Description */
+.activity-content p{
+    color: #666;
+    min-height: 60px;          /* Keeps description area same height */
+}
+
+/* About Page Cards */
+.about-card{
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+    padding: 30px;
+    height: 100%;              /* Equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.4s;
+}
+
+.about-card:hover{
+    transform: translateY(-8px);
+}
+
+.about-card h3{
+    color: #0b1f3a;
+    font-weight: 600;
+    min-height: 50px;
+}
+
+.about-card p{
+    color: #666;
+    line-height: 1.8;
+}
+/* Project Cards */
+.project-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition:0.4s;
+    height:100%;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+}
+
+.project-img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:20px;
+}
+
+.project-content h5{
+    color:#0b1f3a;
+}
+
+/* Modal project images */
+.project-modal-img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+}
+/* Project Slider Image */
+.project-slider-img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+/* Carousel buttons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    background-color: rgba(0,0,0,0.5);
+    padding:20px;
+    border-radius:50%;
+}
+.news-card img{
+    height:250px;
+    object-fit:cover;
+}
+
+.modal-image{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:15px;
+}
+/* LOADER SCREEN */
+#loader{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #0b1f3a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* SPINNER */
+.spinner{
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #f4b400;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* FADE IN PAGE */
+body{
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.card,
+.activity-card,
+.project-card,
+.news-card{
+       transition: all 0.4s ease;
+}
+
+.card:hover,
+.activity-card:hover,
+.project-card:hover,
+.news-card:hover{
+    transform: translateY(-10px) scale(1.02);
+}
+.modal.fade .modal-dialog{
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+.modal.show .modal-dialog{
+    transform: scale(1);
+}
+
+.activity-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.activity-card:hover{
+    transform:translateY(-10px);
+}
+
+.activity-img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.activity-card:hover .activity-img{
+    transform:scale(1.05);
+}
+.section-title h2{
+    color:var(--primary);
+    position:relative;
+    display:inline-block;
+    margin-bottom:15px;
+}
+
+.section-title h2::after{
+    content:'';
+    width:70px;
+    height:4px;
+    background:var(--primary);
+    display:block;
+    margin:10px auto;
+    border-radius:10px;
+}
+.btn-primary,
+.btn-light{
+    border-radius:50px;
+    padding:12px 30px;
+    font-weight:600;
+    transition:.4s;
+}
+
+.btn-light{
+    color:#008751;
+}
+
+.btn-light:hover{
+    transform:translateY(-3px);
+}
